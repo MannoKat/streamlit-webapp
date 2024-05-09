@@ -83,15 +83,15 @@ with tab1:
         
     fig1a = px.scatter(df, x = "weekly_self_study_hours", y = "math_score", color = by_what,
         labels={"weekly_self_study_hours": "Weekly Self-study Hours"},
-        size = "math_score", 
-        # marginal_x="histogram", marginal_y="histogram",
+        # size = "math_score", 
+        marginal_x="histogram", marginal_y="histogram",
         title = "Math Scores vs Self-study Hours")
     st.plotly_chart(fig1a, theme = "streamlit", use_container_width=True)
         
-    fig1b = px.scatter(df, x="weekly_self_study_hours", y="math_score", 
-                    labels={"weekly_self_study_hours": "Weekly Self-study Hours", "math_score": "Math Score"},
-                    color=by_what, facet_col=by_what)
-    st.plotly_chart(fig1b, theme = "streamlit", use_container_width=True)
+    fig1b = px.line(df, x="weekly_self_study_hours", y="math_score", 
+                labels={"weekly_self_study_hours": "Weekly Self-study Hours", "math_score": "Math Score"},
+                color=by_what, facet_col=by_what, facet_col_wrap=3)
+    st.plotly_chart(fig1b, theme="streamlit", use_container_width=False, height=800)
 with tab2:
         category_mapping = {
         'gender': 'Gender',
