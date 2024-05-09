@@ -91,7 +91,7 @@ with tab1:
     fig1b = px.line(df, x="weekly_self_study_hours", y="math_score", 
                 labels={"weekly_self_study_hours": "Weekly Self-study Hours", "math_score": "Math Score"},
                 color=by_what, facet_col=by_what, facet_col_wrap=3)
-    st.plotly_chart(fig1b, theme="streamlit", use_container_width=False, height=800)
+    st.plotly_chart(fig1b, theme="streamlit", use_container_width=True)
 with tab2:
         category_mapping = {
         'gender': 'Gender',
